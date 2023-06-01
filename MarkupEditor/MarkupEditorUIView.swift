@@ -19,7 +19,7 @@ import Combine
 /// In general, we don't want WebKit abstractions to leak into the MarkupEditor world. When the MarkupEditorUIView is instantiated,
 /// you can optionally specify the WKUIDelegate and WKNavigationDelegate if needed, which will be assigned to the underlying MarkupWKWebView.
 public class MarkupEditorUIView: UIView, MarkupDelegate {
-    var tintColor: UIColor?
+    var customColor: UIColor?
     private var toolbar: MarkupToolbarUIView!
     private var toolbarHeightConstraint: NSLayoutConstraint!
     private var webView: MarkupWKWebView!
@@ -44,8 +44,8 @@ public class MarkupEditorUIView: UIView, MarkupDelegate {
             webView = MarkupWKWebView(html: html, placeholder: placeholder, selectAfterLoad: selectAfterLoad, resourcesUrl: resourcesUrl, id: "Document", markupDelegate: markupDelegate ?? self)
             
             // 修改游標等的顏色
-            if let tintColor = tintColor {
-                webView.tintColor = tintColor
+            if let customColor = customColor {
+                webView.tintColor = customColor
             }
         
             // The coordinator acts as the WKScriptMessageHandler and will receive callbacks
