@@ -1,12 +1,12 @@
 body {
-    font-family: -apple-system;
+    font-family: "PingFang-TC-Regular";
     font: -apple-system-body;
     caret-color: red;   /* Helps with debugging since should not appear */
     font-size: 1.0em;
 }
 
 #editor {
-    caret-color: blue;
+    caret-color: #00AB7B;
     cursor: auto;
     /* The overflow and margin are set primarily to deal gracefully with
      * selecting resizable images that are at the edge of the screen.
@@ -30,6 +30,9 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+a:link {
+    color: #00AB7B;
 }
 
 p, ul, ol, dl, table, pre {
